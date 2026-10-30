@@ -48,7 +48,7 @@
 
   @media (max-width: 860px) {
     .wrap { padding: 0 20px; }
-    nav ul li:first-child { display: none; }
+    nav ul li:not(:last-child) { display: none; }
     .hero { padding: 40px 0 56px; }
     .top { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
     h1 { grid-column: 1 / -1; }
@@ -70,6 +70,7 @@
     <a class="logo" href="./">András Habsburg</a>
     <ul>
       <li><a href="#builds">Builds</a></li>
+      <li><a href="#writing">Writing</a></li>
       <li><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></li>
     </ul>
   </nav>
@@ -96,6 +97,24 @@
         <p>My personal OS. Proactive, not reactive. Deep memory and context. Gets better every week. AI Chief of Staff that gets sh*t done. I build it from my phone.</p>
         <span class="go"><span class="mono tag">Main project</span><span>&rarr;</span></span>
       </a>
+      <a href="flow/">
+        <time class="mono">Mar 2026</time>
+        <h3>Flow</h3>
+        <p>AI agents that unblock hospital discharges, starting with medical equipment orders. Startup Garage MVP.</p>
+        <span class="go"><span class="mono tag">Prototype</span><span>&rarr;</span></span>
+      </a>
+      <a>
+        <time class="mono">Oct 2026</time>
+        <h3>Telegram Bridge</h3>
+        <p>Claude Code in your pocket. Runs my whole setup from a chat, and asks before anything risky.</p>
+        <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
+      <a>
+        <time class="mono">Aug 2026</time>
+        <h3>Task Loop</h3>
+        <p>From a brain dump to a planned week, in four Claude Code skills.</p>
+        <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
       <a>
         <time class="mono">Oct 2026</time>
         <h3>Travel</h3>
@@ -107,6 +126,24 @@
         <h3>Canvas Archive</h3>
         <p>Every Stanford Canvas course in my notes, with each PDF and slide deck searchable.</p>
         <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
+      <a>
+        <time class="mono">Oct 2026</time>
+        <h3>Learn on the Go</h3>
+        <p>Tomorrow’s readings on my Kindle, or in my ears with Speechify.</p>
+        <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2 class="sub">And some things I learned building them.</h2>
+    <div class="builds">
+      <a href="writing/silent-staleness/">
+        <time class="mono">Oct 2026</time>
+        <h3>Silent staleness</h3>
+        <p>The failure that never crashes, and how my setup watches for it.</p>
+        <span class="go"><span class="mono tag">Write-up</span><span>&rarr;</span></span>
       </a>
     </div>
   </section>

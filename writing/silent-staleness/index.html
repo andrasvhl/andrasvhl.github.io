@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silent staleness · András Habsburg</title>
+<meta name="description" content="The failure that never crashes, and how my AI setup watches for it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../page.css">
+<style>
+  .essay { padding: 72px 0 96px; }
+  .essay h1 { max-width: 14ch; }
+  .essay .meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--bk); display: flex; gap: 24px; }
+  .body { max-width: 680px; margin-top: 56px; font-size: 19px; line-height: 1.6; letter-spacing: -.005em; }
+  .body p { margin-top: 22px; }
+  .body h2 { margin-top: 56px; font: 500 28px/1.15 var(--sans); letter-spacing: -.03em; }
+  .body ul { margin-top: 18px; padding-left: 0; list-style: none; }
+  .body li { padding: 12px 0 12px 28px; border-top: 1px solid var(--g2); position: relative; }
+  .body li:last-child { border-bottom: 1px solid var(--g2); }
+  .body li::before { content: "+"; position: absolute; left: 0; color: var(--g3); }
+  .body strong { font-weight: 600; }
+  .pull { margin: 48px 0 8px; padding: 28px 0; border-top: 1px solid var(--bk); border-bottom: 1px solid var(--bk); font: 500 clamp(26px, 3vw, 34px)/1.15 var(--sans); letter-spacing: -.035em; }
+  .groups { margin-top: 24px; display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid var(--g2); border-top: 1px solid var(--g2); font-size: 16px; }
+  .groups div { border-right: 1px solid var(--g2); border-bottom: 1px solid var(--g2); padding: 18px; }
+  .groups b { display: block; font-weight: 500; margin-bottom: 6px; }
+  .groups span { color: var(--g4); }
+  @media (max-width: 860px) { .groups { grid-template-columns: 1fr; } .body { font-size: 17px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="logo" href="../../">András Habsburg</a><ul><li><a href="../../#builds">Builds</a></li><li><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></li></ul></nav>
+  <article class="essay">
+    <span class="mono dim">Write-up</span>
+    <h1>Silent staleness.</h1>
+    <div class="meta mono dim"><span>Oct 2026</span><span>3 min read</span></div>
+    <div class="body">
+      <p>When you run an AI system on your own life, the scary failure is not a crash. A crash tells you. The scary failure is when everything looks healthy and the output is quietly wrong.</p>
+      <p>I have hit that exact failure five times, and every time I found it by accident:</p>
+      <ul>
+        <li>My WhatsApp bridge answered questions for <strong>ten weeks</strong> from a frozen snapshot. Every check said it was running. It was, just not with anything new.</li>
+        <li>A remote-control service printed <strong>&ldquo;Connected&rdquo;</strong> for a full day while holding dead login tokens.</li>
+        <li>A script was described in my docs for two weeks before it actually existed.</li>
+        <li>My phone capture stopped writing one field on every new task, and nothing complained.</li>
+        <li>The formulas in my task dashboard drifted until they no longer matched the notes they summarised.</li>
+      </ul>
+      <p class="pull">The process was healthy every time. The output was not.</p>
+
+      <h2>Why agents make this worse</h2>
+      <p>An agent reads your notes and acts as if they are true. If a note about how something works went stale three weeks ago, the agent will confidently plan against it. A human would squint at an old date. An agent usually doesn&rsquo;t, unless you make it.</p>
+      <p>And an AI setup has a lot of things that expire without a sound: logins that lapse after 30 days, access tokens with a fixed end date, a profile fact that was true last quarter, a scheduled job that stopped firing.</p>
+
+      <h2>What I do about it</h2>
+      <p>One file, a maintenance registry, answers a single question: <strong>what do I have to look at, and how often, or it will lie to me?</strong> It has one standing rule: anything that needs regular checking gets added in the same session it is built. Not later. Later never comes.</p>
+      <p>The rows are grouped by the kind of attention they need, not by what they are:</p>
+      <div class="groups">
+        <div><b>Only I can do these</b><span>Re-logging in, renewing a token, re-forming a judgement. A machine can notice, but only I can fix it.</span></div>
+        <div><b>Nothing can check these</b><span>Things no script can verify. These get a date and a sweep that asks me.</span></div>
+        <div><b>The machine handles these</b><span>Daily and weekly checks on an always-on server, with my laptop shut.</span></div>
+      </div>
+      <p>Three rules make the checks honest:</p>
+      <ul>
+        <li><strong>Check the output, not the process.</strong> &ldquo;Is the service up?&rdquo; would have passed all five failures above. &ldquo;Did it read a real message today?&rdquo; would have caught them.</li>
+        <li><strong>Dates are either fresh or a question.</strong> Notes carry a verified date. When it passes, the agent has to say so and ask, instead of planning against it.</li>
+        <li><strong>Tell me where I actually look.</strong> I don&rsquo;t read maintenance emails, so urgent problems go to my phone as a push and the rest go into one short Monday note.</li>
+      </ul>
+      <p>Today the registry tracks 86 things that can go stale, and 58 of them are watched by 107 automatic checks. The other 28 are listed as unwatched, on purpose. An honest gap is better than a green light that lies.</p>
+
+      <h2>The takeaway</h2>
+      <p>If you build an agent that runs on your life, budget as much thought for how it goes stale as for how it works. The build is the fun part. Staying true is the job.</p>
+    </div>
+  </article>
+  <footer class="mono"><a href="../../">&larr; Home</a><span>andrashabsburg.com</span></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow · András Habsburg</title>
+<meta name="description" content="Stop chasing, start discharging.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>  :root { --bk: #0a0a0a; --wh: #fff; --g1: #f4f4f4; --g2: #e5e5e5; --g3: #8a8a8a; --g4: #555; --sans: "Geist", "Helvetica Neue", Arial, sans-serif; --mono: "Geist Mono", ui-monospace, monospace; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--wh); color: var(--bk); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; text-transform: uppercase; }
+  .dim { color: var(--g3); }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; border-bottom: 1px solid var(--bk); }
+  .logo { font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav ul a { color: var(--g4); } nav ul a:hover { color: var(--bk); }
+
+  .hero { padding: 72px 0 72px; }
+  h1 { margin-top: 14px; font: 500 clamp(48px, 7vw, 100px)/.92 var(--sans); letter-spacing: -.055em; }
+  .hero-row { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--bk); }
+  .lede { grid-column: 1 / 7; }
+  .tag-line { font: 500 clamp(24px, 2.4vw, 32px)/1.15 var(--sans); letter-spacing: -.03em; margin-bottom: 16px; text-wrap: balance; }
+  .lede p:not(.tag-line) { color: var(--g4); font-size: 17px; max-width: 52ch; }
+  .act { grid-column: 8 / 13; display: flex; flex-direction: column; gap: 10px; }
+  .btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border: 1px solid var(--bk); font-weight: 500; transition: background .15s, color .15s; }
+  .btn.solid { background: var(--bk); color: var(--wh); }
+  .btn.solid:hover { background: var(--wh); color: var(--bk); }
+  .btn.end { margin-top: 48px; max-width: 420px; }
+  .stat { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--g2); }
+  .stat strong { display: block; font: 500 44px/1 var(--sans); letter-spacing: -.05em; }
+  .stat span { color: var(--g4); font-size: 15px; }
+
+  .shot { margin: 0 0 72px; border: 1px solid var(--bk); }
+  .shot img { display: block; width: 100%; height: auto; }
+  section { border-top: 1px solid var(--bk); padding: 28px 0 96px; }
+  .head { margin-bottom: 40px; }
+  .head .mono { grid-column: 1 / 4; padding-top: 10px; }
+  .head h2 { grid-column: 4 / 12; font: 500 clamp(30px, 3.6vw, 48px)/1.02 var(--sans); letter-spacing: -.04em; }
+
+  .does { display: grid; grid-template-columns: repeat(2, 1fr); border-left: 1px solid var(--g2); border-top: 1px solid var(--g2); }
+  .does div { border-right: 1px solid var(--g2); border-bottom: 1px solid var(--g2); padding: 24px 24px 32px; }
+  .does h3 { font-weight: 500; font-size: 21px; letter-spacing: -.02em; line-height: 1.25; }
+  .does p { margin-top: 10px; color: var(--g4); }
+
+  .steps { counter-reset: s; list-style: none; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--g2); font-size: 18px; letter-spacing: -.01em; }
+  .steps li:last-child { border-bottom: 1px solid var(--g2); }
+  .steps li::before { content: "0" counter(s); grid-column: 1 / 4; font: 500 13px var(--mono); color: var(--g3); padding-top: 5px; }
+  .steps li::before { grid-column: 1 / 4; }
+  .steps li > span { grid-column: 4 / 13; }
+
+  .need { list-style: none; border-top: 1px solid var(--g2); }
+  .need li { padding: 16px 0; border-bottom: 1px solid var(--g2); font-size: 17px; display: grid; grid-template-columns: 3fr 9fr; gap: 24px; }
+  .need li::before { content: "+"; color: var(--g3); }
+
+  .stats4 { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid var(--g2); border-top: 1px solid var(--g2); }
+  .stats4 div { border-right: 1px solid var(--g2); border-bottom: 1px solid var(--g2); padding: 24px 22px 28px; }
+  .stats4 strong { display: block; font: 500 clamp(34px, 3.6vw, 48px)/1 var(--sans); letter-spacing: -.05em; }
+  .stats4 span { display: block; margin-top: 12px; color: var(--g4); font-size: 15px; line-height: 1.4; }
+  .secnote { margin-top: 28px; max-width: 70ch; color: var(--g4); font-size: 17px; }
+  .endcta { border-top: 1px solid var(--bk); padding: 0 0 72px; }
+  footer { border-top: 1px solid var(--bk); padding: 20px 0 40px; display: flex; justify-content: space-between; color: var(--g3); }
+  footer a:hover { color: var(--bk); }
+
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    nav ul li:first-child { display: none; }
+    .hero { padding: 48px 0 56px; }
+    .grid { grid-template-columns: 1fr; gap: 20px; }
+    .grid > * { grid-column: 1 / -1 !important; }
+    .does { grid-template-columns: 1fr; }
+    .stats4 { grid-template-columns: 1fr 1fr; }
+    .steps li, .need li { grid-template-columns: 40px 1fr; gap: 12px; }
+    .steps li > span { grid-column: 2 / 3; }
+    section { padding-bottom: 64px; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="logo" href="../">András Habsburg</a><ul><li><a href="../#builds">Builds</a></li><li><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></li></ul></nav>
+  <header class="hero">
+    <span class="mono dim">Mar 2026</span>
+    <h1>Flow</h1>
+    <div class="hero-row grid">
+      <div class="lede"><p class="tag-line">Stop chasing, start discharging.</p><p>Patients who are medically ready to go home stay in hospital for days because equipment was not ordered, insurance has not approved, or no rehab bed is free. Flow finds each hospital’s worst bottlenecks, then puts AI agents on them, starting with medical equipment (DME) ordering.</p></div>
+      <div class="act">
+        <a class="btn solid" href="https://discharge-flow-aid.lovable.app/">Try the prototype <span>&nearr;</span></a>
+        <span class="mono dim">Clickable MVP · demo data only</span>
+        
+      </div>
+    </div>
+  </header>
+  <figure class="shot"><img src="../flow-shot.jpg" alt="Flow screenshot" loading="lazy"></figure>
+  <section><div class="head grid"><span class="mono">01</span><h2>The problem</h2></div><div class="stats4"><div><strong>$3–5M</strong><span>lost per hospital each year to discharge delays</span></div><div><strong>2–5 h</strong><span>a day physicians spend coordinating discharges</span></div><div><strong>~20%</strong><span>of discharge delays come from medical equipment</span></div><div><strong>2–5 days</strong><span>added by every insurance denial and resubmission</span></div></div><p class="secnote">Discharge delays are not one problem but a thousand paper cuts: equipment orders, insurance authorisations, post-acute beds, case management gaps. No existing tool tracks the whole discharge end to end.</p></section><section><div class="head grid"><span class="mono">02</span><h2>What it does</h2></div><div class="does"><div><h3>Diagnose first</h3><p>Every hospital loses time in different places. Flow starts by finding which bottlenecks cost the most days at that hospital.</p></div><div><h3>DME agent</h3><p>Orders and tracks medical equipment early, with documentation complete the first time, so a walker or oxygen does not keep a patient in bed an extra day.</p></div><div><h3>One view of every discharge</h3><p>Case managers see who is blocked, at risk or ready, and why, with one click to chase the right person.</p></div><div><h3>Modular</h3><p>Start with one module, then add medication, destination, transport and caregiver as each proves itself.</p></div></div></section><section><div class="head grid"><span class="mono">03</span><h2>What 20+ interviews taught us</h2></div><ol class="steps"><li><span>Discharge delays are not one problem but a thousand paper cuts. Physicians lose 2–5 hours a day to coordination across case management, equipment suppliers and nursing facilities, and no tool tracks it end to end.</span></li><li><span>Hospital leaders put the cost at $3–5M a year and call it a top operational priority.</span></li><li><span>Insurance authorisation is a leading driver of extra days. Case managers spend hours on the phone and fax with payers.</span></li><li><span>Equipment causes about one in five delays: orders go in too late and are tracked by hand.</span></li><li><span>Most denials are self-inflicted: missing fields, incomplete documentation, absent signatures. Medicare-complete paperwork satisfies every payer we checked, so one standard template fixes a controllable problem.</span></li><li><span>Hospitals want to start with the one or two worst bottlenecks, not buy a new platform, and will pay for a pilot if it shows a measurable drop in length of stay.</span></li></ol><p class="secnote">Interviews with physicians, residents, advanced practice providers, case managers and hospital administrators, plus shadowing care teams, as part of Stanford’s Startup Garage.</p></section><section><div class="head grid"><span class="mono">04</span><h2>Market and model</h2></div><div class="stats4"><div><strong>$20B</strong><span>addressable: 6,200+ US hospitals losing $3–5M each</span></div><div><strong>$300–400</strong><span>per bed per month, plus an implementation fee</span></div><div><strong>4.7×</strong><span>lifetime value to acquisition cost</span></div><div><strong>5–8×</strong><span>return for the hospital</span></div></div><p class="secnote">Enterprise tools like Qventus and LeanTaaS optimise capacity broadly, CareMaze offers a dashboard for the whole discharge, and prior-auth tools like Waystar sit on the payer side. Flow is the only one that diagnoses a hospital’s specific bottlenecks and then automates the top ones, from inside the hospital.</p></section><section><div class="head grid"><span class="mono">05</span><h2>Go-to-market</h2></div><ol class="steps"><li><span>Pilot the DME module on high-discharge inpatient medicine services at one academic medical center.</span></li><li><span>Measure denial rate, resubmissions and authorisation delay days over a 4–6 week pilot.</span></li><li><span>Add an Epic SmartForm and auto-fill once the manual workflow is validated.</span></li><li><span>Expand to skilled nursing authorisation, then to peer hospitals through warm introductions.</span></li></ol></section><section><div class="head grid"><span class="mono">06</span><h2>Context</h2></div><ul class="need"><li>Startup Garage team project, Stanford GSB, Winter 2026</li><li>Team of four GSB MBAs, including an MD/MBA, with a Stanford Medicine faculty sponsor</li><li>My part: product, the prototype and the operating plan</li><li>Prototype built in Lovable</li></ul></section>
+  <div class="endcta"><a class="btn solid end" href="https://discharge-flow-aid.lovable.app/">Try the prototype <span>&nearr;</span></a></div>
+  <footer class="mono"><a href="../">&larr; All builds</a><span>andrashabsburg.com</span></footer>
+</div>
+</body>
+</html>
