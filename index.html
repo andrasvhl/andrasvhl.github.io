@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>András Habsburg</title>
+<meta name="description" content="Stuff András Habsburg builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bk: #0a0a0a; --wh: #fff; --g1: #f4f4f4; --g2: #e5e5e5; --g3: #8a8a8a; --g4: #555; --sans: "Geist", "Helvetica Neue", Arial, sans-serif; --mono: "Geist Mono", ui-monospace, monospace; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--wh); color: var(--bk); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; border-bottom: 1px solid var(--bk); }
+  .logo { font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav ul a { color: var(--g4); } nav ul a:hover { color: var(--bk); }
+
+  .hero { padding: 96px 0 0; }
+  h1 { font: 500 clamp(52px, 9vw, 128px)/.92 var(--sans); letter-spacing: -.055em; }
+  .top { align-items: end; }
+  .top h1 { grid-column: 1 / 9; }
+  .top figure { grid-column: 9 / 13; border: 1px solid var(--bk); }
+  .top img { display: block; width: 100%; height: auto; }
+  .intro { margin-top: 64px; padding: 28px 0 120px; border-top: 1px solid var(--bk); }
+  .intro p.sub { grid-column: 1 / 7; font: 500 clamp(28px, 3vw, 40px)/1.05 var(--sans); letter-spacing: -.04em; }
+  .intro dl { grid-column: 9 / 13; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 15px; }
+  .intro dt { color: var(--g3); padding-top: 2px; }
+
+  section { border-top: 1px solid var(--bk); padding: 28px 0 120px; }
+  .head { margin-bottom: 56px; }
+  .head .mono { grid-column: 1 / 4; padding-top: 10px; }
+  .head h2 { grid-column: 4 / 12; font: 500 clamp(32px, 4.2vw, 56px)/1.02 var(--sans); letter-spacing: -.04em; }
+
+  .builds a { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid var(--g2); align-items: baseline; transition: background .15s; }
+  .builds a:last-child { border-bottom: 1px solid var(--g2); }
+  .builds a:hover { background: var(--g1); }
+  .builds time { grid-column: 1 / 4; color: var(--g3); }
+  .builds h3 { grid-column: 4 / 7; font: 500 clamp(28px, 3vw, 40px)/1 var(--sans); letter-spacing: -.04em; }
+  .builds p { grid-column: 7 / 11; color: var(--g4); }
+  .builds .go { grid-column: 11 / 13; text-align: right; display: flex; justify-content: flex-end; gap: 12px; align-items: baseline; }
+  .tag { border: 1px solid var(--bk); padding: 3px 7px; }
+  .tag.dim { border-color: var(--g2); color: var(--g3); }
+  .builds a.soon { pointer-events: none; }
+  .builds a.soon h3 { color: var(--g3); }
+
+  footer { border-top: 1px solid var(--bk); padding: 20px 0 40px; display: flex; justify-content: space-between; color: var(--g3); }
+
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    nav ul li:first-child { display: none; }
+    .hero { padding-top: 48px; }
+    .top { gap: 32px; }
+    .top figure { max-width: 320px; }
+    .grid, .builds a { grid-template-columns: 1fr; gap: 12px; }
+    .grid > *, .builds a > * { grid-column: 1 / -1 !important; }
+    .intro { padding-bottom: 80px; gap: 32px; }
+    .intro p.sub { font-size: 28px; }
+    section { padding-bottom: 80px; }
+    .builds .go { justify-content: flex-start; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="./">András Habsburg</a>
+    <ul>
+      <li><a href="#builds">Builds</a></li>
+      <li><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="top grid">
+      <h1>András<br>Habsburg</h1>
+      <figure><img src="portrait-bw.jpg" width="600" height="750" alt="András Habsburg on a mountain trail"></figure>
+    </div>
+    <div class="intro grid">
+      <p class="sub">Stuff I build.</p>
+      <dl>
+        <dt class="mono">Now</dt><dd>MBA, Stanford GSB '27</dd>
+        <dt class="mono">Before</dt><dd>St. Gallen, St Andrews<br>COO @ Vicoland</dd>
+        <dt class="mono">Based</dt><dd>Palo Alto</dd>
+        <dt class="mono">Elsewhere</dt><dd><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></dd>
+      </dl>
+    </div>
+  </header>
+
+  <section id="builds">
+    <div class="head grid"><span class="mono">01 / Builds</span><h2>Things I have built.</h2></div>
+    <div class="builds">
+      <a href="carmen/">
+        <time class="mono">Oct 2026</time>
+        <h3>Carmen</h3>
+        <p>My personal AI system on Obsidian and Claude Code, packaged as a kit anyone can set up. Updates itself whenever I improve it.</p>
+        <span class="go"><span class="mono tag">Kit</span><span>&rarr;</span></span>
+      </a>
+      <a class="soon">
+        <time class="mono">Oct 2026</time>
+        <h3>Travel</h3>
+        <p>Door-to-door trip planning at the lowest sensible cost: every nearby airport, trains and buses, hidden-city and self-transfer fares, with a price watch that pings me when a fare drops.</p>
+        <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
+      <a class="soon">
+        <time class="mono">Sep 2026</time>
+        <h3>Canvas Archive</h3>
+        <p>Pulls every Stanford Canvas course into my notes: pages, assignments, files and my own submissions, with the text of every PDF and slide deck extracted so it can be searched and asked about.</p>
+        <span class="go"><span class="mono tag dim">Soon</span></span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="mono">
+    <span>&copy; 2026 András Habsburg</span>
+    <span>andrashabsburg.com</span>
+  </footer>
+</div>
+</body>
+</html>
