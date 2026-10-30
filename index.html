@@ -22,13 +22,13 @@
   nav ul { display: flex; gap: 32px; list-style: none; }
   nav ul a { color: var(--g4); } nav ul a:hover { color: var(--bk); }
 
-  .hero { padding: 96px 0 0; }
-  h1 { font: 500 clamp(52px, 9vw, 128px)/.92 var(--sans); letter-spacing: -.055em; }
+  .hero { padding: 48px 0 0; }
+  h1 { font: 500 clamp(48px, 6.4vw, 92px)/.92 var(--sans); letter-spacing: -.055em; }
   .top { align-items: end; }
   .top h1 { grid-column: 1 / 9; }
-  .top figure { grid-column: 9 / 13; border: 1px solid var(--bk); }
+  .top figure { grid-column: 10 / 13; max-width: 300px; justify-self: end; width: 100%; border: 1px solid var(--bk); }
   .top img { display: block; width: 100%; height: auto; }
-  .intro { margin-top: 64px; padding: 28px 0 120px; border-top: 1px solid var(--bk); }
+  .intro { margin-top: 40px; padding: 28px 0 72px; border-top: 1px solid var(--bk); }
   .intro p.sub { grid-column: 1 / 7; font: 500 clamp(28px, 3vw, 40px)/1.05 var(--sans); letter-spacing: -.04em; }
   .intro dl { grid-column: 9 / 13; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 15px; }
   .intro dt { color: var(--g3); padding-top: 2px; }
@@ -57,7 +57,9 @@
     nav ul li:first-child { display: none; }
     .hero { padding-top: 48px; }
     .top { gap: 32px; }
-    .top figure { max-width: 320px; }
+    .top { gap: 24px; }
+    .top figure { max-width: 200px; justify-self: start; }
+    .intro { margin-top: 32px; padding-bottom: 56px; }
     .grid, .builds a { grid-template-columns: 1fr; gap: 12px; }
     .grid > *, .builds a > * { grid-column: 1 / -1 !important; }
     .intro { padding-bottom: 80px; gap: 32px; }
