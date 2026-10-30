@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canvas Archive · András Habsburg</title>
+<meta name="description" content="Every course you have taken, searchable forever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>  :root { --bk: #0a0a0a; --wh: #fff; --g1: #f4f4f4; --g2: #e5e5e5; --g3: #8a8a8a; --g4: #555; --sans: "Geist", "Helvetica Neue", Arial, sans-serif; --mono: "Geist Mono", ui-monospace, monospace; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--wh); color: var(--bk); font: 400 16px/1.55 var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .02em; text-transform: uppercase; }
+  .dim { color: var(--g3); }
+  .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; border-bottom: 1px solid var(--bk); }
+  .logo { font-weight: 600; font-size: 17px; letter-spacing: -.02em; }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav ul a { color: var(--g4); } nav ul a:hover { color: var(--bk); }
+
+  .hero { padding: 72px 0 72px; }
+  h1 { margin-top: 14px; font: 500 clamp(48px, 7vw, 100px)/.92 var(--sans); letter-spacing: -.055em; }
+  .hero-row { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--bk); }
+  .lede { grid-column: 1 / 7; }
+  .tag-line { font: 500 clamp(24px, 2.4vw, 32px)/1.15 var(--sans); letter-spacing: -.03em; margin-bottom: 16px; text-wrap: balance; }
+  .lede p:not(.tag-line) { color: var(--g4); font-size: 17px; max-width: 52ch; }
+  .act { grid-column: 8 / 13; display: flex; flex-direction: column; gap: 10px; }
+  .btn { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border: 1px solid var(--bk); font-weight: 500; transition: background .15s, color .15s; }
+  .btn.solid { background: var(--bk); color: var(--wh); }
+  .btn.solid:hover { background: var(--wh); color: var(--bk); }
+  .btn.end { margin-top: 48px; max-width: 420px; }
+  .stat { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--g2); }
+  .stat strong { display: block; font: 500 44px/1 var(--sans); letter-spacing: -.05em; }
+  .stat span { color: var(--g4); font-size: 15px; }
+
+  .shot { margin: 0 0 72px; border: 1px solid var(--bk); }
+  .shot img { display: block; width: 100%; height: auto; }
+  section { border-top: 1px solid var(--bk); padding: 28px 0 96px; }
+  .head { margin-bottom: 40px; }
+  .head .mono { grid-column: 1 / 4; padding-top: 10px; }
+  .head h2 { grid-column: 4 / 12; font: 500 clamp(30px, 3.6vw, 48px)/1.02 var(--sans); letter-spacing: -.04em; }
+
+  .does { display: grid; grid-template-columns: repeat(2, 1fr); border-left: 1px solid var(--g2); border-top: 1px solid var(--g2); }
+  .does div { border-right: 1px solid var(--g2); border-bottom: 1px solid var(--g2); padding: 24px 24px 32px; }
+  .does h3 { font-weight: 500; font-size: 21px; letter-spacing: -.02em; line-height: 1.25; }
+  .does p { margin-top: 10px; color: var(--g4); }
+
+  .steps { counter-reset: s; list-style: none; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--g2); font-size: 18px; letter-spacing: -.01em; }
+  .steps li:last-child { border-bottom: 1px solid var(--g2); }
+  .steps li::before { content: "0" counter(s); grid-column: 1 / 4; font: 500 13px var(--mono); color: var(--g3); padding-top: 5px; }
+  .steps li::before { grid-column: 1 / 4; }
+  .steps li > span { grid-column: 4 / 13; }
+
+  .need { list-style: none; border-top: 1px solid var(--g2); }
+  .need li { padding: 16px 0; border-bottom: 1px solid var(--g2); font-size: 17px; display: grid; grid-template-columns: 3fr 9fr; gap: 24px; }
+  .need li::before { content: "+"; color: var(--g3); }
+
+  .stats4 { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 1px solid var(--g2); border-top: 1px solid var(--g2); }
+  .stats4 div { border-right: 1px solid var(--g2); border-bottom: 1px solid var(--g2); padding: 24px 22px 28px; }
+  .stats4 strong { display: block; font: 500 clamp(34px, 3.6vw, 48px)/1 var(--sans); letter-spacing: -.05em; }
+  .stats4 span { display: block; margin-top: 12px; color: var(--g4); font-size: 15px; line-height: 1.4; }
+  .secnote { margin-top: 28px; max-width: 70ch; color: var(--g4); font-size: 17px; }
+  .endcta { border-top: 1px solid var(--bk); padding: 0 0 72px; }
+  footer { border-top: 1px solid var(--bk); padding: 20px 0 40px; display: flex; justify-content: space-between; color: var(--g3); }
+  footer a:hover { color: var(--bk); }
+
+  @media (max-width: 860px) {
+    .wrap { padding: 0 20px; }
+    nav ul li:first-child { display: none; }
+    .hero { padding: 48px 0 56px; }
+    .grid { grid-template-columns: 1fr; gap: 20px; }
+    .grid > * { grid-column: 1 / -1 !important; }
+    .does { grid-template-columns: 1fr; }
+    .stats4 { grid-template-columns: 1fr 1fr; }
+    .steps li, .need li { grid-template-columns: 40px 1fr; gap: 12px; }
+    .steps li > span { grid-column: 2 / 3; }
+    section { padding-bottom: 64px; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="logo" href="../">András Habsburg</a><ul><li><a href="../#builds">Builds</a></li><li><a href="https://www.linkedin.com/in/andras-habsburg/">LinkedIn</a></li></ul></nav>
+  <header class="hero">
+    <span class="mono dim">Sep 2026</span>
+    <h1>Canvas Archive</h1>
+    <div class="hero-row grid">
+      <div class="lede"><p class="tag-line">Every course you have taken, searchable forever.</p><p>Pulls every Canvas course into your notes before access runs out: pages, assignments, files and your own submissions, with the text of every document extracted so Claude can answer questions about it.</p></div>
+      <div class="act">
+        <a class="btn solid" href="canvas-archive.zip">Download Canvas Archive <span>&darr;</span></a>
+        <span class="mono dim">Free · MIT licence · README inside</span>
+        <div class="stat"><strong>40 courses</strong><span>about 4,100 notes and 941 files in my own archive</span></div>
+      </div>
+    </div>
+  </header>
+  
+  <section><div class="head grid"><span class="mono">01</span><h2>What it does</h2></div><div class="does"><div><h3>Everything, verbatim</h3><p>Modules, pages, assignments, rubrics, announcements, discussions and every downloadable file.</p></div><div><h3>Text you can ask about</h3><p>Every PDF, slide deck and spreadsheet gets its text extracted, so “what did week 3 cover?” just works.</p></div><div><h3>Your own work kept</h3><p>Your submissions and grades sit next to the course they belong to.</p></div><div><h3>Incremental</h3><p>The first run backfills everything. After that it only fetches what changed.</p></div></div></section><section><div class="head grid"><span class="mono">02</span><h2>How it works</h2></div><ol class="steps"><li><span>Create a Canvas access token in your account settings.</span></li><li><span>Run the archive once for the full backfill.</span></li><li><span>Re-run whenever you like; it picks up only what is new.</span></li><li><span>Ask Claude about any course, reading or assignment.</span></li></ol></section><section><div class="head grid"><span class="mono">03</span><h2>What you need</h2></div><ul class="need"><li>Claude Code</li><li>Python 3</li><li>A Canvas account (built for Stanford, works with any Canvas school)</li><li>Optional: Obsidian to browse it</li></ul></section>
+  <div class="endcta"><a class="btn solid end" href="canvas-archive.zip">Download Canvas Archive <span>&darr;</span></a></div>
+  <footer class="mono"><a href="../">&larr; All builds</a><span>andrashabsburg.com</span></footer>
+</div>
+</body>
+</html>
