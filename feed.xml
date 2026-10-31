@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>András Habsburg</title>
+  <link>https://andrashabsburg.com/</link>
+  <atom:link href="https://andrashabsburg.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Stuff I build, and what I learn building it.</description>
+  <language>en</language>
+  <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0000</lastBuildDate>
+  <item>
+    <title>Silent staleness</title>
+    <link>https://andrashabsburg.com/writing/silent-staleness/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/writing/silent-staleness/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>The failure that never crashes, and how my setup watches for it.</description>
+  </item>
+  <item>
+    <title>Telegram Bridge</title>
+    <link>https://andrashabsburg.com/telegram-bridge/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/telegram-bridge/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Claude Code in your pocket. Runs my whole setup from a chat, and asks before anything risky.</description>
+  </item>
+  <item>
+    <title>Travel</title>
+    <link>https://andrashabsburg.com/travel/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/travel/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Door-to-door trip planning across every nearby airport, train and hidden-city fare, with a price watch.</description>
+  </item>
+  <item>
+    <title>Learn on the Go</title>
+    <link>https://andrashabsburg.com/learn-on-the-go/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/learn-on-the-go/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Tomorrow’s readings on my Kindle, or in my ears with Speechify.</description>
+  </item>
+  <item>
+    <title>Task Loop</title>
+    <link>https://andrashabsburg.com/task-loop/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/task-loop/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>From a brain dump to a planned week, in four Claude Code skills.</description>
+  </item>
+  <item>
+    <title>Canvas Archive</title>
+    <link>https://andrashabsburg.com/canvas-archive/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/canvas-archive/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Every Stanford Canvas course in my notes, with each PDF and slide deck searchable.</description>
+  </item>
+  <item>
+    <title>Flow</title>
+    <link>https://andrashabsburg.com/flow/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/flow/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>AI agents that unblock hospital discharges, starting with medical equipment orders.</description>
+  </item>
+  <item>
+    <title>Carmen</title>
+    <link>https://andrashabsburg.com/carmen/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/carmen/</guid>
+    <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
+    <description>My personal OS. AI Chief of Staff that gets sh*t done.</description>
+  </item>
+  <item>
+    <title>The most expensive secretary in the hospital</title>
+    <link>https://medium.com/@andrasvhl/the-most-expensive-secretary-in-the-hospital-e0c2fedc03d4</link>
+    <guid isPermaLink="true">https://medium.com/@andrasvhl/the-most-expensive-secretary-in-the-hospital-e0c2fedc03d4</guid>
+    <pubDate>Fri, 05 Jun 2026 12:00:00 +0000</pubDate>
+    <description>Why better software won’t fix Europe’s physician workload crisis, and the model that would.</description>
+  </item>
+</channel>
+</rss>

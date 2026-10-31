@@ -53,6 +53,8 @@
   .builds a:not([href]) { cursor: default; }
   #writing .builds h3 { white-space: normal; text-wrap: balance; }
 
+  .about-text { max-width: 640px; font-size: 19px; line-height: 1.55; letter-spacing: -.01em; }
+  .about-text p + p { margin-top: 16px; }
   footer { border-top: 1px solid var(--bk); padding: 20px 0 40px; display: flex; justify-content: space-between; color: var(--g3); }
 
   @media (max-width: 860px) {
@@ -72,6 +74,7 @@
     footer { flex-direction: column; gap: 8px; }
   }
 </style>
+<link rel="alternate" type="application/rss+xml" title="András Habsburg" href="https://andrashabsburg.com/feed.xml">
 </head>
 <body>
 <div class="wrap">
@@ -160,6 +163,16 @@
         <p>Why better software won’t fix Europe’s physician workload crisis, and the model that would.</p>
         <span class="go"><span class="mono tag">Medium</span><span>&nearr;</span></span>
       </a>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="sub">About</h2>
+    <div class="about-text">
+      <p>I’m András Habsburg, an MBA candidate at Stanford GSB, Class of 2027.</p>
+      <p>Before Stanford, I spent 7 years building Vicoland, a B2B platform that matches companies with ready-made freelance teams, first as CPO, then as COO.</p>
+      <p>I studied business at the University of St. Gallen and computer science at the University of St Andrews, where my thesis was on ethical chatbots.</p>
+      <p>I’m a proud European, living in California. I care most about where three big problems meet: economies that need to grow again, ageing societies whose need for care is exploding, and the paperwork burying the people who provide that care. I build AI tools for my own life and for others, and I think AI is part of the answer to all three.</p>
     </div>
   </section>
 
