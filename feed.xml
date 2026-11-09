@@ -6,7 +6,7 @@
   <atom:link href="https://andrashabsburg.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Stuff I build, and what I learn building it.</description>
   <language>en</language>
-  <lastBuildDate>Sat, 31 Oct 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0000</lastBuildDate>
   <item>
     <title>Silent staleness</title>
     <link>https://andrashabsburg.com/writing/silent-staleness/</link>
@@ -61,7 +61,7 @@
     <link>https://andrashabsburg.com/carmen/</link>
     <guid isPermaLink="true">https://andrashabsburg.com/carmen/</guid>
     <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
-    <description>My personal OS. AI Chief of Staff that gets sh*t done.</description>
+    <description>My personal AI operating system. Gets sh*t done.</description>
   </item>
   <item>
     <title>The most expensive secretary in the hospital</title>
