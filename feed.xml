@@ -6,7 +6,7 @@
   <atom:link href="https://andrashabsburg.com/feed.xml" rel="self" type="application/rss+xml"/>
   <description>Stuff I build, and what I learn building it.</description>
   <language>en</language>
-  <lastBuildDate>Mon, 09 Nov 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 12:00:00 +0000</lastBuildDate>
   <item>
     <title>Silent staleness</title>
     <link>https://andrashabsburg.com/writing/silent-staleness/</link>
@@ -27,6 +27,13 @@
     <guid isPermaLink="true">https://andrashabsburg.com/travel/</guid>
     <pubDate>Fri, 30 Oct 2026 12:00:00 +0000</pubDate>
     <description>Door-to-door trip planning across every nearby airport, train and hidden-city fare, with a price watch.</description>
+  </item>
+  <item>
+    <title>Improve Product</title>
+    <link>https://andrashabsburg.com/improve-product/</link>
+    <guid isPermaLink="true">https://andrashabsburg.com/improve-product/</guid>
+    <pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+    <description>A design council that writes stories from real use, builds, and tests hands-on in a sandbox.</description>
   </item>
   <item>
     <title>Learn on the Go</title>
